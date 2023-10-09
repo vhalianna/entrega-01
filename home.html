@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Sistema de carga de certificados</title>
+    <script src="miarchivo.js"></script>
+</head>
+<body>
+    <h1>Sistema de carga de certificados</h1>
+
+    <form id="formularioCertificados">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+        <br><br>
+        <label for="tipoCertificado">Tipo de Certificado:</label>
+        <select id="tipoCertificado">
+            <option value="aprobacion">Aprobación</option>
+            <option value="exposicion">Exposición</option>
+            <option value="asistencia">Participación</option>
+        </select>
+
+        <button type="button" id="btnCargarCertificado" onclick="validarCarga()">Cargar Certificado</button>
+    </form>
+
+    <div id="resultado"></div>
+    <div id="certificadosContainer"></div>
+</body>
+</html>
+
