@@ -31,7 +31,7 @@ select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* para que el ancho y alto del campo incluyan relleno y borde */
 }
 
 button {
@@ -58,10 +58,45 @@ button:hover {
     border-radius: 4px;
 }
 
+#cantidadCertificadosContainer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
 #certificadosContainer {
     margin-top: 20px;
     padding: 10px;
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 4px;
+    text-align: center; /* Alinear el contenido al centro */
+    list-style-type: none; /* Quitar los puntos de la lista */
+    padding-left: 0; /* Quitar el padding izquierdo de la lista */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }

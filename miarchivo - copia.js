@@ -33,13 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
 cargarCertificadoBtn.addEventListener("click", validarCarga);
 informeBtn.addEventListener("click", informe);
 
-// Función para validar y cargar un certificado al hacer clic en el botón "Cargar Certificado
+// Función para validar y cargar un certificado al hacer clic en el botón "Cargar Certificado"
 function validarCarga() {
   const apellido = apellidoInput.value;
   const nombre = nombreInput.value;
   const dni = dniInput.value;
   const tipoCertificado = tipoCertificadoInput.value;
-
+  
   // Validar que se hayan ingresado todos los campos
   if (!apellido || !nombre || !dni || !tipoCertificado) {
     resultadoElement.textContent = "Por favor, complete todos los campos antes de cargar el certificado.";
@@ -57,24 +57,24 @@ function validarCarga() {
 
   // Cargar el certificado en el array
   cargarCertificado(tipoCertificado, persona);
+  
+  // Establecer certificadoCargado en true cuando se carga un certificado
+  certificadoCargado = true;
 
   // Limpiar los campos de entrada
   apellidoInput.value = "";
   nombreInput.value = "";
   dniInput.value = "";
   tipoCertificadoInput.selectedIndex = 0; // Restablecer la selección al primer índice (opción predeterminada)
+  
+  // Mostrar la alerta de éxito solo cuando se carga un certificado
+  if (certificadoCargado) {
+    const successAlert = document.getElementById("successAlert");
+    successAlert.style.display = "block";
+  }
 
   // Mostrar los certificados cargados
   mostrarCertificados();
-
-  // Mostrar el alerta de éxito
-  const successAlert = document.getElementById("successAlert");
-  successAlert.style.display = "block";
-
-  // Ocultar el alerta después de 3 segundos (3000 milisegundos)
-  setTimeout(function() {
-    successAlert.style.display = "none";
-  }, 3000);
 }
 
 function cargarCertificado(tipo, persona) {
